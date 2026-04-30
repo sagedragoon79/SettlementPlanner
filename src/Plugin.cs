@@ -88,10 +88,10 @@ namespace SettlementPlanner
                 entry.name = "SettlementPlanner_Button";
                 entry.transform.SetSiblingIndex(foodEntry.transform.GetSiblingIndex() + 1);
 
-                // Probe for a paper-ish item icon. Falls through if missing — the
-                // brick icon will remain, which is fine but less themed.
+                // Use the blueprint sprite — most thematically planner-y. Falls
+                // through to paper/book if blueprint isn't in the asset set.
                 Sprite? sprite = null;
-                foreach (var probe in new[] { "ItemPaper", "ItemBlueprint", "ItemBook" })
+                foreach (var probe in new[] { "ItemBlueprint", "ItemPaper", "ItemBook" })
                 {
                     sprite = GlobalAssets.itemSetupData?.GetItemEntry(probe)?.icon;
                     if (sprite != null) break;
