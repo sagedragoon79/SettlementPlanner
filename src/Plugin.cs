@@ -118,7 +118,6 @@ namespace SettlementPlanner
 
                 SettlementPlannerMod.PlannerEntry = entry;
                 RefreshTooltip(entry);
-                SettlementPlannerMod.Log?.Msg("Planner button injected into top bar");
             }
             catch (Exception e)
             {
@@ -151,7 +150,6 @@ namespace SettlementPlanner
 
         private static void OnClick()
         {
-            SettlementPlannerMod.Log?.Msg($"Opening URL: {SettlementPlannerMod.PlannerUrl}");
             Application.OpenURL(SettlementPlannerMod.PlannerUrl);
         }
     }
